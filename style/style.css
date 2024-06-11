@@ -43,51 +43,38 @@
 
     .mode .switch {
         width: 50px;
-        /* Reduzindo a largura para 80% do tamanho original */
         height: 25px;
-        /* Reduzindo a altura para 80% do tamanho original */
     }
 
     .mode .slider {
         border-radius: 30px;
-        /* Ajustando o raio da borda para manter a forma arredondada */
     }
 
     .mode .slider:before {
         height: 20px;
-        /* Reduzindo a altura do ícone para 80% do tamanho original */
         width: 20px;
-        /* Reduzindo a largura do ícone para 80% do tamanho original */
         left: 2px;
-        /* Ajustando a posição do ícone para manter o alinhamento */
         bottom: 2px;
-        /* Ajustando a posição do ícone para manter o alinhamento */
         border-radius: 30px;
     }
 
     .mode .slider.round {
         border-radius: 30px;
-        /* Ajustando o raio da borda do ícone para manter a forma arredondada */
     }
 
     .mode .slider.round:before {
         border-radius: 30px;
-        /* Ajustando o raio da borda do ícone para manter a forma arredondada */
     }
-
-
 }
-
-
-
 
 /* Path: style/style.css */
 body {
     font-family: Arial, sans-serif;
     color: #7b2d5f;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-
 
 .main {
     display: grid;
@@ -100,6 +87,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
 }
 
 .footer {
@@ -113,6 +101,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    padding: 10px;
 }
 
 .text h1 {
@@ -156,8 +145,8 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    padding: 10px;
 }
-
 
 .logo_icon {
     margin: 10px;
@@ -192,12 +181,7 @@ body {
 
 /* Path: style/main.css */
 
-
-
-
-
 /* Path: style/buttom.css */
-
 .menu_button {
     display: inline-block;
     background-color: #f284b1;
@@ -211,6 +195,8 @@ body {
     line-height: 34px;
     border-color: #7b2d5f;
     margin: 5px;
+    padding: 5px 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .menu_button:hover,
@@ -242,7 +228,6 @@ body {
     right: 0;
     bottom: 0;
     background-color: #7b2d5f;
-    ;
     transition: .4s;
     border-radius: 34px;
 }
@@ -255,13 +240,8 @@ body {
     left: 4px;
     bottom: 4px;
     background-color: #ffffff;
-    border: 2px;
     transition: .4s;
     border-radius: 50%;
-}
-
-input:checked+.slider {
-    background-color: #f284b1;
 }
 
 input:checked+.slider {
@@ -290,7 +270,7 @@ input:checked+.slider:before {
     color: #f284b1;
 }
 
-.dark_mode .menu_button {
+.dark_mode .menu_button  {
     background-color: #7b2d5f;
     color: #f284b1;
     border-color: #f284b1;
@@ -304,7 +284,6 @@ input:checked+.slider:before {
 }
 
 .dark_mode .header {
-    /* From https://css.glass */
     background: rgba(123, 45, 95, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -316,8 +295,15 @@ input:checked+.slider:before {
     background-color: #f284b1;
 }
 
-.dark_mode .main {
-    /* From https://css.glass */
+.dark_mode .main{
+    background: rgba(123, 45, 95, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dark_mode .gallery{
     background: rgba(123, 45, 95, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -326,7 +312,6 @@ input:checked+.slider:before {
 }
 
 .dark_mode .footer {
-    /* From https://css.glass */
     background: rgba(123, 45, 95, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -337,3 +322,92 @@ input:checked+.slider:before {
 .dark_mode .footer_text a {
     color: #f284b1;
 }
+
+/* Additional styles from CSS2 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    align-items: center;
+    margin: 10px;
+    background: rgba(242, 132, 177, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    width: flex; /* Ajuste conforme necessário */
+    margin-bottom: 20px; /* Espaço entre as imagens */
+    overflow: hidden;
+}
+
+.responsive-img {
+    width: flex;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.image-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    color: white;
+    padding: flex;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none; /* O texto não deve afetar eventos de mouse */
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image-text {
+    opacity: 1;
+}
+
+.image-container:hover .responsive-img {
+    transform: scale(1.1); /* Efeito de zoom na imagem quando o mouse passa sobre ela */
+}
+
+
+.gallery img {
+    width: 30%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.sub-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.sub-text {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background: rgba(242, 132, 177, 0.8);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.sub-section img {
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 8px;
+}
+
